@@ -1,12 +1,14 @@
 package hiber.model;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 import javax.persistence.*;
 
 @Entity
-@Component
+@Table(name = "cars")
 public class Car {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,6 +18,18 @@ public class Car {
     @Column(name = "series")
     private int series;
 
+
+    @OneToOne
+    @JoinColumn(name = "id")
+    private User user;
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
 
     public Car(String model,int series){
         this.model = model;
@@ -37,6 +51,6 @@ public class Car {
 
     @Override
     public String toString() {
-        return "Car model: " + model + "( " + series + " series )";
+        return id + ") " + "Car model: " + model + "( " + series + " series )";
     }
 }
