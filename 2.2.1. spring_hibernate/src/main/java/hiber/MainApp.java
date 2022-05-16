@@ -33,7 +33,9 @@ public class MainApp {
       userService.add(new User("Александр", "Иванов", "alexandr@mail.ru",car3));
 
       System.out.println(userService.selectUserFromCar("AUDI",4));
-
+      System.out.println(userService.selectUserFromCar("VOLGA",3));
+      System.out.println(userService.selectUserFromCar("VAZ",2));
+      System.out.println(userService.selectUserFromCar("BMW",1));
 
 
 //      List<User> users = userService.listUsers();

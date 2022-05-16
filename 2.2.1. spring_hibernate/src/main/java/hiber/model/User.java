@@ -21,8 +21,8 @@ public class User {
    @Column(name = "email")
    private String email;
    @OneToOne
-   @MapsId
-   @JoinColumn(name = "id")
+//   @MapsId
+//   @JoinColumn(name = "id")
    private Car car;
 
    public User() {}
@@ -78,6 +78,6 @@ public class User {
    @Override
    public String toString() {
       return "Id = " + id + "\n" + "First Name = " + firstName + "\n" + "Last Name = " + lastName
-              + "\n" + "Email = " + email + "\n" + "Car = " + car;
+              + "\n" + "Email = " + email + "\n" + "Car = " + car + "\n";
    }
 }
